@@ -1,0 +1,20 @@
+<mat-card class="wrapper">
+
+  <mat-card-header>
+    <mat-card-title>{{date(0)}}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list class="list" [style.overflow]="'auto'" [style.height.px]="230">
+      <mat-divider class="divider"></mat-divider>
+      <mat-list-item *ngFor="let event of calendar['events']" >
+        <mat-icon mat-list-icon>event</mat-icon>
+        {{event}}
+      </mat-list-item>
+      <mat-list-item *ngIf="calendar['events'].length == 0">
+        No events
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+
+</mat-card>
